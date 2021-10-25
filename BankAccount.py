@@ -64,31 +64,40 @@ class BankAccount:
                 User.print_statement()
             
             if choice == "2":
+                number= 10
                 statement= input("Enter account number:")
                 for account in account_numbers:
                     if statement == account_numbers[account]:
                         account.print_statement()
-                    else:
-                        print("Incorrect account no.")
+                        number+=1
+                        break
+                if number==10:
+                    print("Incoorect account information")
                         
             if choice == "3":
+                number_2= 10
                 statement= input("Enter account number:")
                 deposit_amount= input("How much would you like to deposit?")
                 for account in account_numbers:
                     if statement == account_numbers[account]:
                         account.deposit(int(deposit_amount))
-                    else:
-                        print("Incorrect account no.")
+                        number_2+=1
+                        break
+                if number_2==10:
+                    print("Incoorect account information")
+
 
             if choice == "4":
+                number_3= 10
                 statement= input("Enter account number:")
                 withdraw_amount= input("How much would you like to withdraw?")
                 for account in account_numbers:
                     if statement == account_numbers[account]:
                         account.withdraw(int(withdraw_amount))
-                    else:
-                        print("Incorrect account no.")
+                        number_3+=1
                         break
+                if number_3==10:
+                    print("Incoorect account information")
             
             if choice == "5":
                 print("Hope you have a great day!")
