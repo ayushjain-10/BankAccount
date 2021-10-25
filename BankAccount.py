@@ -55,7 +55,7 @@ class BankAccount:
             if choice== "1":
                 name= input("Enter name:")
                 account_no= input("Enter account number:")
-                # account_no = int(account_no)
+                account_no = int(account_no)
                 bal= input("Enter balance:")
                 bal = int(bal)
                 User = BankAccount(name, account_no, bal, type)
