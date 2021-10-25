@@ -113,14 +113,3 @@ account_numbers= {Mitchell: '13141592', Ayush: '34582458', User_3: '12345678'}
 
 BankAccount.interest_loop()
 BankAccount.application()
-
-
-
-
-
-
-        
-
-
-
-
