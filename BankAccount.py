@@ -49,6 +49,55 @@ class BankAccount:
             account.add_interest()
             print("--------")
 
+    def application():
+        while True:
+            choice= input("Enter no.= 1. Create Account, 2. Statement, 3. Deposit, 4. Withdraw, or 5. Exit : ")
+            if choice== "1":
+                name= input("Enter name:")
+                account_no= input("Enter account number:")
+                # account_no = int(account_no)
+                bal= input("Enter balance:")
+                bal = int(bal)
+                User = BankAccount(name, account_no, bal, type)
+                bank[User]= name
+                account_numbers[User]= account_no
+                User.print_statement()
+            
+            if choice == "2":
+                statement= input("Enter account number:")
+                for account in account_numbers:
+                    if statement == account_numbers[account]:
+                        account.print_statement()
+                    else:
+                        print("Incorrect account no.")
+                        
+            if choice == "3":
+                statement= input("Enter account number:")
+                deposit_amount= input("How much would you like to deposit?")
+                for account in account_numbers:
+                    if statement == account_numbers[account]:
+                        account.deposit(int(deposit_amount))
+                    else:
+                        print("Incorrect account no.")
+
+            if choice == "4":
+                statement= input("Enter account number:")
+                withdraw_amount= input("How much would you like to withdraw?")
+                for account in account_numbers:
+                    if statement == account_numbers[account]:
+                        account.withdraw(int(withdraw_amount))
+                    else:
+                        print("Incorrect account no.")
+                        break
+            
+            if choice == "5":
+                print("Hope you have a great day!")
+                break
+
+
+
+    
+
 Mitchell = BankAccount("Mitchell", 13141592, 0, "checking")
 Mitchell.execute(Mitchell, 400000, 150)
 
@@ -59,8 +108,18 @@ User_3 = BankAccount("User_3", 12345678, 0, "Checking")
 Mitchell.execute(User_3, 50000, 600000)
 
 bank= {Mitchell: 'Mitchell', Ayush: 'Ayush', User_3: 'User_3'}
+account_numbers= {Mitchell: '13141592', Ayush: '34582458', User_3: '12345678'}
+
 
 BankAccount.interest_loop()
+BankAccount.application()
+
+
+
+
+
+
+        
 
 
 
