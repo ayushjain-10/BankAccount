@@ -30,12 +30,23 @@ class BankAccount:
         print(f"Account Name: {self.full_name}")
         print(f"Account Number: ****{account_str[-4:]}")
         print(f"Balance: {self.balance}")
+    
+    def execute(self, user, deposit, withdraw):
+        user.deposit(deposit)
+        user.print_statement()
+        user.add_interest()
+        user.print_statement()
+        user.withdraw(withdraw)
+        user.print_statement()
+        print("---------------")
 
 Mitchell = BankAccount("Mitchell", 13141592, 0)
-Mitchell.deposit(400000)
-Mitchell.print_statement()
-Mitchell.add_interest()
-Mitchell.print_statement()
-Mitchell.withdraw(150)
-Mitchell.print_statement()
+Mitchell.execute(Mitchell, 400000, 150)
+
+Ayush = BankAccount("Ayush", 34582458, 0)
+Mitchell.execute(Ayush, 200000, 10000)
+
+User_3 = BankAccount("User_3", 12345678, 0)
+Mitchell.execute(User_3, 50000, 200)
+
 
